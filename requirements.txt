@@ -1,0 +1,6 @@
+pillow
+requests
+telebot
+numpy
+openai
+flask
