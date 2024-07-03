@@ -2,9 +2,9 @@
 # import os
 from dotenv import load_dotenv
 load_dotenv()
-
 import requests
 
+from subflows import shorten_url, rem_bg, to_pdf
 from bot import session
 
 # @bot.message_handler(commands=['start'])
