@@ -5,3 +5,4 @@ numpy
 openai
 flask
 python-dotenv
+shorten-url
