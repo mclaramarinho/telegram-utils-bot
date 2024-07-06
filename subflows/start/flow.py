@@ -3,7 +3,7 @@ from telebot.types import Message
 from bot import Session, bot
 from subflows.start.StartSection import StartSection
 
-session: Session | None = None
+session = Session()
 
 
 def is_in_start_section():
@@ -13,6 +13,11 @@ def is_in_start_section():
 @bot.message_handler(func=lambda message: is_in_start_section())
 def greeting(message: Message):
     global session
-    session = Session(message.chat)
+    session.set_user(message.chat)
+    send_greeting()
+
+
+def send_greeting():
     start_section = StartSection(session.username)
     bot.send_message(chat_id=session.uid, text=start_section.start_message, reply_markup=start_section.menu)
+
