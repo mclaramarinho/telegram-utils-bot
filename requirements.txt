@@ -1,7 +1,7 @@
 pillow
-requests
-telebot
+requests~=2.32.3
+telebot~=0.0.5
 numpy
-openai
-python-dotenv
-shorten-url
+openai~=1.35.9
+python-dotenv~=1.0.1
+pyshorteners~=1.0.1

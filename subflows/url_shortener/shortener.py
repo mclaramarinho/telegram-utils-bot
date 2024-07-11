@@ -1,8 +1,6 @@
 import string
 import re
-import shorten_url
-
-import shorten
+import pyshorteners as ps
 
 
 class InvalidUrlException(Exception):
@@ -23,7 +21,9 @@ def validate_url(url: string):
 
 def shortener(url: string):
     if validate_url(url):
-        shortened = shorten.shorten(url)
+        shortener = ps.Shortener()
+
+        shortened = ps.Shortener().tinyurl.short(url)
         return shortened
     else:
         raise InvalidUrlException()
