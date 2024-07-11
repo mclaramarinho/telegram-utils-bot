@@ -1,5 +1,5 @@
-from bot.bot import bot
-from bot.Session import Session
+from .bot import bot
+from .session import Session
 
 __all__ = [
     "bot",
