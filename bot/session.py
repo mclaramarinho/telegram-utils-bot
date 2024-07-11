@@ -15,7 +15,7 @@ steps = {
 }
 
 class Session:
-    _uid: int
+    _uid: int|None
     _username: string
     _step: int
     _prev: int
@@ -39,6 +39,8 @@ class Session:
     def __init__(self):
         self._step = 0
         self._prev = 0
+        self._uid = None
+        self._username = None
 
     def set_user(self, user):
         self._uid = user.id
