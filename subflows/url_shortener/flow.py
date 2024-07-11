@@ -24,7 +24,6 @@ def is_in_end_menu():
 @bot.callback_query_handler(func=lambda cb: should_start_url_section(cb))
 def start_url_section(cb: CallbackQuery):
     global shorten_section
-
     session.change_step(cb.data)
 
     shorten_section = ShortenerSection()
@@ -52,4 +51,4 @@ def handle_shorten_url_end_menu(cb: CallbackQuery):
         bot.send_message(chat_id=session.uid, text=shorten_section.welcome_message)
     elif cb.data == "back_to_menu":
         session.change_step("back_to_menu")
-        send_greeting()
+        send_greeting(cb.message)
