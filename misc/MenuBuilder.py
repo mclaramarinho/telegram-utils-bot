@@ -7,10 +7,12 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 class MenuOption:
     text_content: string
     callback_data: string
+    active: bool
 
-    def __init__(self, text_content: string, callback_data: string):
+    def __init__(self, text_content: string, callback_data: string, active: bool = True):
         self.callback_data = callback_data
         self.text_content = text_content
+        self.active = active
 
 
 class MenuBuilder:
@@ -41,5 +43,6 @@ class MenuBuilder:
 
     def _generate_menu(self):
         for option in self._options:
-            temp_opt = InlineKeyboardButton(text=option.text_content, callback_data=option.callback_data)
-            self._menu.add(temp_opt)
+            if option.active:
+                temp_opt = InlineKeyboardButton(text=option.text_content, callback_data=option.callback_data)
+                self._menu.add(temp_opt)

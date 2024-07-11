@@ -9,9 +9,9 @@ from misc.MenuBuilder import MenuOption, MenuBuilder
 class StartSection:
     _startMessage: string
     _menu_options: List[MenuOption] = [
-        MenuOption(text_content="Remove Background", callback_data="rem_bg"),
+        MenuOption(text_content="Remove Background", callback_data="rem_bg", active=False),
         MenuOption(text_content="Shorten URL", callback_data="shorten_url"),
-        MenuOption(text_content="Convert to PDF", callback_data="to_pdf"),
+        MenuOption(text_content="Convert to PDF", callback_data="to_pdf", active=False),
         MenuOption(text_content="About Me", callback_data="about"),
     ]
     _menu: InlineKeyboardMarkup
