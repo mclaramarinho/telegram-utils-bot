@@ -3,7 +3,6 @@ from typing import List
 
 from telebot.types import InlineKeyboardMarkup
 
-from bot import Session
 from misc.MenuBuilder import MenuOption, MenuBuilder
 
 
